@@ -17,6 +17,7 @@ public class User {
     public User() {
         this.score = 0;
         this.lives = 3;
+        this.nama = "Dhaniaffa";
     }
 
     public String getNama() {
