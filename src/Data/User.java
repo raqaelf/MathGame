@@ -15,6 +15,8 @@ public class User {
     private int score;
 
     public User() {
+        this.score = 0;
+        this.lives = 3;
     }
 
     public String getNama() {
