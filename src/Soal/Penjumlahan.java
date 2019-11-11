@@ -5,10 +5,13 @@
  */
 package Soal;
 
+
 /**
  *
  * @author raqaelf
  */
-public class Penjumlahan {
-    
+public class Penjumlahan{
+    public int getJawaban(int X, int Y){
+        return X+Y;
+    }
 }
