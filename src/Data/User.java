@@ -11,14 +11,25 @@ package Data;
  */
 public class User {
     public String nama;
-    private int lives;
-    private int score;
-
-    public User() {
-        this.score = 0;
+    private int lives ;
+    private int skor;
+    public void reset(){
         this.lives = 3;
-        this.nama = "Contoh2";
+        this.skor = 0;
     }
+    public User(){
+        this.lives = 3;
+        this.skor = 0;
+    }
+    public User(String nama){
+        this.nama = nama;
+    }
+    
+    public User(int lives, int skor){
+        this.lives = lives;
+        this.skor = skor;
+    }
+    
 
     public String getNama() {
         return nama;
@@ -36,11 +47,14 @@ public class User {
         this.lives = lives;
     }
 
-    public int getScore() {
-        return score;
+    public int getSkor() {
+        return skor;
     }
 
-    public void setScore(int score) {
-        this.score = score;
+    public void setSkor(int skor) {
+        this.skor = skor;
     }
+    
+
+
 }
