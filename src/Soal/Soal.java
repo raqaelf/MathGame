@@ -5,10 +5,37 @@
  */
 package Soal;
 
+import java.util.Random;
+import java.util.Scanner;
+
 /**
  *
  * @author Arwendy Melyndra
  */
 public class Soal {
+    private int level;
     
+    Scanner input = new Scanner(System.in);
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public Soal() {
+        this.level = 1;
+    }
+    
+    public void reset(){
+        this.level = 1;
+    }
+    
+    public int randomAngka(int min, int max) {
+        Random r = new Random();
+        int angka = r.nextInt(max - min + 1) + min;
+        return angka;
+    }
 }
