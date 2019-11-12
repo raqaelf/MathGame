@@ -13,6 +13,7 @@ public class User {
     public String nama;
     private int lives ;
     private int skor;
+    
     public void reset(){
         this.lives = 3;
         this.skor = 0;
