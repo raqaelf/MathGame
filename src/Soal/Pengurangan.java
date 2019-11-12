@@ -9,6 +9,9 @@ package Soal;
  *
  * @author raqaelf
  */
-public class Pengurangan {
-    
+public class Pengurangan extends Penjumlahan{
+    @Override
+    public int getJawaban(int X, int Y){
+        return X-Y;
+    }
 }
