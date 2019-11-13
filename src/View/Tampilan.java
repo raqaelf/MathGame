@@ -13,15 +13,20 @@ import java.util.Scanner;
 
 /**
  *
- * @author HP
+ * @author raqaelf
  */
-public class Tampil {
+public class Tampilan {
 
     User data = new User();
     Soal soal = new Soal();
     Scanner input = new Scanner(System.in);
+    Scanner inputs = new Scanner(System.in);
     Penjumlahan tambah = new Penjumlahan();
     Pengurangan kurang = new Pengurangan();
+    
+    public static void main(String[] args) {
+        new Tampilan().tampilanAwal();
+    }
 
     public void tampilanAwal() {
         System.out.println("**********************");
@@ -51,7 +56,7 @@ public class Tampil {
             System.out.println();
 
             System.out.printf("Pilih no menu : ");
-            pilihan = input.nextInt();
+            pilihan = this.input.nextInt();
 
             switch (pilihan) {
                 case 1:
@@ -136,13 +141,20 @@ public class Tampil {
         System.out.println("Berapakah hasil dari " + Xs + " + " + Ys);
 
         System.out.printf("Jawab : ");
-
-        if (input.nextInt() != (tambah.getJawaban(X, Y))) {
+        int jawaban = 0;
+        
+        if (inputs.hasNextInt()) {
+            jawaban += inputs.nextInt();
+        } else {
+            jawaban += 0;
+        }
+        
+        if (jawaban != (tambah.getJawaban(X, Y))) {
             data.setLives(data.getLives() - 1);
             data.setSkor(data.getSkor() - 1);
-            if (data.getSkor()>100 && data.getSkor()<=200) {
+            if (data.getSkor() > 100 && data.getSkor() <= 200) {
                 soal.setLevel(2);
-            } else if (data.getSkor()>200 && data.getSkor()<=300) {
+            } else if (data.getSkor() > 200 && data.getSkor() <= 300) {
                 soal.setLevel(3);
             } else {
                 soal.setLevel(1);
@@ -153,9 +165,9 @@ public class Tampil {
                     + "[Level : " + soal.getLevel() + "]");
         } else {
             data.setSkor(data.getSkor() + 4);
-            if (data.getSkor()>100 && data.getSkor()<=200) {
+            if (data.getSkor() > 100 && data.getSkor() <= 200) {
                 soal.setLevel(2);
-            } else if (data.getSkor()>200 && data.getSkor()<=300) {
+            } else if (data.getSkor() > 200 && data.getSkor() <= 300) {
                 soal.setLevel(3);
             }
             System.out.println("Selamat  " + data.getNama() + ", Anda Benar!"
@@ -214,13 +226,20 @@ public class Tampil {
         System.out.println("Berapakah hasil dari " + Xs + " - " + Ys);
 
         System.out.printf("Jawab : ");
-
-        if (input.nextInt() != (kurang.getJawaban(X, Y))) {
+        int jawaban = 0;
+        
+        if (inputs.hasNextInt()) {
+            jawaban += inputs.nextInt();
+        } else {
+            jawaban += 0;
+        }
+        
+        if (jawaban != (kurang.getJawaban(X, Y))) {
             data.setLives(data.getLives() - 1);
             data.setSkor(data.getSkor() - 1);
-            if (data.getSkor()>100 && data.getSkor()<=200) {
+            if (data.getSkor() > 100 && data.getSkor() <= 200) {
                 soal.setLevel(2);
-            } else if (data.getSkor()>200 && data.getSkor()<=300) {
+            } else if (data.getSkor() > 200 && data.getSkor() <= 300) {
                 soal.setLevel(3);
             } else {
                 soal.setLevel(1);
@@ -231,9 +250,9 @@ public class Tampil {
                     + "[Level : " + soal.getLevel() + "]");
         } else {
             data.setSkor(data.getSkor() + 4);
-            if (data.getSkor()>100 && data.getSkor()<=200) {
+            if (data.getSkor() > 100 && data.getSkor() <= 200) {
                 soal.setLevel(2);
-            } else if (data.getSkor()>200 && data.getSkor()<=300) {
+            } else if (data.getSkor() > 200 && data.getSkor() <= 300) {
                 soal.setLevel(3);
             }
             System.out.println("Selamat  " + data.getNama() + ", Anda Benar!"
@@ -248,10 +267,5 @@ public class Tampil {
             this.tampilanMenu();
         }
     }
-    
-    
-public static void main(String[] args) {
-        Tampil x = new Tampil();
-        x.tampilanAwal();
-    }
+
 }
